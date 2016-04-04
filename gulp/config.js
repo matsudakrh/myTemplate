@@ -4,7 +4,7 @@
   baseConfig = {
     sourceDir: 'source/',
     publicDir: 'public/',
-    root: 'public/',
+    root: this.publicDir,
     gulpRequireSource: '../../source/'
   };
 
@@ -29,6 +29,9 @@
       sass: {
         "public": baseConfig.publicDir + 'css/',
         source: baseConfig.sourceDir + 'sass/**/*.sass',
+        error: {
+          errorHandler: notify.onError("Error: <%= error.message %>")
+        },
         cssnext: {
           browser: 'last 2 versions',
           features: {
@@ -42,7 +45,7 @@
         }
       },
       jade: {
-        src: [baseConfig.sourceDir + 'jade/**/*.jade', '!' + baseConfig.sourceDir + 'component/*.jade'],
+        src: [baseConfig.sourceDir + 'jade/**/*.jade', '!' + baseConfig.sourceDir + 'jade/component/*.jade'],
         "public": baseConfig.publicDir,
         base: baseConfig.sourceDir + 'jade/',
         option: {

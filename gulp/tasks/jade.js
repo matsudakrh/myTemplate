@@ -6,7 +6,7 @@ var config = require('../config').option;
 
 
 gulp.task('jade', function(){
-    gulp.src( config.jade.src,
+    return gulp.src( config.jade.src,
         { base: config.jade.base })
         .pipe( data( function (file) {
             return {

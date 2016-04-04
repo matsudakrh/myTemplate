@@ -2,7 +2,7 @@
 baseConfig =
   sourceDir: 'source/'
   publicDir: 'public/'
-  root: 'public/'
+  root: this.publicDir
   gulpRequireSource: '../../source/'
 
 notify = require 'gulp-notify'
@@ -29,6 +29,8 @@ module.exports =
     sass:
       public: baseConfig.publicDir + 'css/'
       source: baseConfig.sourceDir + 'sass/**/*.sass'
+      error:
+        errorHandler: notify.onError("Error: <%= error.message %>")
       cssnext:
         browser: 'last 2 versions'
         features:
@@ -42,8 +44,8 @@ module.exports =
     jade:
       src: [
         baseConfig.sourceDir + 'jade/**/*.jade'
-        '!' + baseConfig.sourceDir + 'component/*.jade'
-        ]
+        '!' + baseConfig.sourceDir + 'jade/component/*.jade'
+      ]
 
       public: baseConfig.publicDir
 

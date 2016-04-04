@@ -9,7 +9,7 @@ var plumber = require('gulp-plumber');
 var config = require('../config').option;
 
 gulp.task('sass', function(){
-    gulp.src( config.sass.source )
+    return gulp.src( config.sass.source )
         .pipe(plumber( config.sass.error ))
         .pipe(sass())
         .pipe(cssnext( config.sass.cssnext ))

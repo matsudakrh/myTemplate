@@ -4,7 +4,7 @@ var config = require('../config').path;
 
 //JavaScript
 gulp.task('jsx', function(){
-    gulp.src( config.sourceDir + 'js/**/*.jsx' )
+    return gulp.src( config.sourceDir + 'js/**/*.jsx' )
         .pipe(react())
         .pipe(gulp.dest(config.publicDir + 'js'));
 });
