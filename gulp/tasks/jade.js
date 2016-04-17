@@ -16,4 +16,3 @@ gulp.task('jade', function(){
         .pipe(jade( config.jade.option ))
         .pipe(gulp.dest( config.jade.public ));
 });
-

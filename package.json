@@ -4,7 +4,9 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "default": "rm -r public/*;gulp config;gulp",
+    "server": "gulp server;gulp watch"
   },
   "author": "Hiroki Matsuda",
   "license": "ISC",
